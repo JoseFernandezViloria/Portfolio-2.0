@@ -21,9 +21,9 @@ const Footer = ({ t }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl text-white hover:text-blue-300 hover:bg-white/20 transition-all duration-300"
+      className="group relative p-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:text-red-300 hover:bg-white/20 transition-all duration-300"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-yellow-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <Icon size={20} className="relative z-10" />
     </a>
   );
@@ -35,7 +35,7 @@ const Footer = ({ t }) => {
           {/* Email input con funcionalidad de copiar */}
           <div className="max-w-md mx-auto">
             <h3 className="text-2xl sm:text-3xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 to-yellow-400 bg-clip-text text-transparent">
+              <span className="text-red-400">
                 ¿Tienes un proyecto en mente?
               </span>
             </h3>
@@ -49,12 +49,12 @@ const Footer = ({ t }) => {
                 type="email"
                 value={email}
                 readOnly
-                className="flex-1 bg-white text-gray-800 placeholder-gray-500 px-4 py-3 rounded-xl focus:outline-none text-sm sm:text-base border-2 border-transparent focus:border-blue-400 transition-colors min-w-0"
+                className="flex-1 bg-white text-gray-800 placeholder-gray-500 px-4 py-3 focus:outline-none text-sm sm:text-base border-2 border-transparent focus:border-red-400 transition-colors min-w-0"
                 placeholder="Tu email aquí..."
               />
               <button
                 onClick={copyToClipboard}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl hover:shadow-blue-500/25 transition-all duration-300 flex-shrink-0 w-32 self-center sm:self-auto"
+                className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold hover:shadow-red-500/25 transition-all duration-300 flex-shrink-0 w-32 self-center sm:self-auto"
               >
                 {copied ? (
                   <div className="flex items-center justify-center gap-2">
@@ -103,8 +103,8 @@ const Footer = ({ t }) => {
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-slate-700 pt-8">
-            <p className="text-gray-400 text-sm">{t.copyright}</p>
+          <div className="text-gray-400 text-sm">
+            <p>&copy; 2024 Jose. Todos los derechos reservados.</p>
           </div>
         </div>
       </div>

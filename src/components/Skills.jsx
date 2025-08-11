@@ -8,10 +8,10 @@ const Skills = ({ skills }) => (
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-blue-400/30 rounded-lg p-3 flex flex-col items-center justify-center text-center hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/20"
+            className="bg-white/10 backdrop-blur-sm border border-red-400/30 p-3 flex flex-col items-center justify-center text-center hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg shadow-red-500/20 hover:shadow-red-500/40"
           >
             {/* Icono */}
-            <div className="text-2xl mb-2 text-white">{skill.icon}</div>
+            <div className="text-2xl mb-2 text-red-400">{skill.icon}</div>
 
             {/* Nombre de la habilidad */}
             <span className="text-xs font-medium text-white text-center leading-tight">
@@ -22,25 +22,25 @@ const Skills = ({ skills }) => (
       </div>
 
       {/* Diseño horizontal para desktop */}
-      <div className="hidden sm:block bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-xl border border-blue-400/20 rounded-xl p-6 sm:p-8 shadow-xl shadow-blue-500/10">
+      <div className="hidden sm:block bg-white/5 backdrop-blur-xl border border-blue-400/20 p-6 sm:p-8 shadow-xl shadow-blue-500/10">
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-blue-400/30 rounded-lg px-4 py-3 hover:bg-white/20 transition-all duration-300 hover:scale-105 flex items-center gap-3 shadow-lg shadow-blue-500/20 hover:shadow-xl hover:shadow-blue-500/30"
+              className="group relative bg-white/10 backdrop-blur-sm border border-red-400/30 px-4 py-3 hover:bg-white/20 transition-all duration-300 hover:scale-105 flex items-center gap-3 shadow-lg shadow-red-500/20 hover:shadow-red-500/40"
             >
               {/* Icono pequeño */}
-              <div className="text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300">
+              <div className="text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300 text-red-400">
                 {skill.icon}
               </div>
 
               {/* Nombre de la habilidad */}
-              <span className="text-sm sm:text-base font-medium text-white group-hover:text-blue-300 transition-colors">
+              <span className="text-sm sm:text-base font-medium text-white group-hover:text-red-300 transition-colors">
                 {skill.name}
               </span>
 
               {/* Línea decorativa en hover */}
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-yellow-400 group-hover:w-full transition-all duration-300"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-400 group-hover:w-full transition-all duration-300"></div>
             </div>
           ))}
         </div>

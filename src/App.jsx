@@ -61,7 +61,7 @@ function App() {
 
   return (
     <ErrorBoundaryClass>
-      <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white font-sans min-h-screen antialiased relative">
+      <div className="bg-slate-900 text-white font-sans min-h-screen antialiased relative">
         <Suspense fallback={<div className="text-white">Cargando...</div>}>
           <Header
             openAboutSidebar={openAboutSidebar}

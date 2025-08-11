@@ -8,10 +8,10 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
       <nav className="container mx-auto flex justify-between items-center px-4 md:px-8 py-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg flex items-center justify-center shadow-lg">
+          <div className="w-10 h-10 bg-red-500 flex items-center justify-center shadow-lg">
             <Code size={20} className="text-white" />
           </div>
-          <div className="text-xl font-bold tracking-widest bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
+          <div className="text-xl font-bold tracking-widest text-white">
             JOSE.DEV
           </div>
         </div>
@@ -37,7 +37,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
           {/* Language Switch */}
           <button
             onClick={toggleLanguage}
-            className="relative flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-blue-500/20 to-yellow-500/20 backdrop-blur-xl border border-blue-400/30 rounded-lg text-white text-sm font-medium hover:bg-white/20 transition-all duration-300 group"
+            className="relative flex items-center gap-2 px-3 py-1 bg-blue-500/20 backdrop-blur-xl border border-blue-400/30 text-white text-sm font-medium hover:bg-white/20 transition-all duration-300 group"
           >
             <Globe
               size={16}
@@ -48,7 +48,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
 
           <a
             href="#contact"
-            className="px-6 py-2 bg-yellow-600 hover:bg-yellow-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 ease-in-out"
+            className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold shadow-lg hover:shadow-red-500/25 transition-all duration-300 ease-in-out"
           >
             Contacto
           </a>
@@ -59,7 +59,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
           {/* Language Switch for Mobile */}
           <button
             onClick={toggleLanguage}
-            className="relative flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-blue-500/20 to-yellow-500/20 backdrop-blur-xl border border-blue-400/30 rounded-lg text-white text-xs font-medium hover:bg-white/20 transition-all duration-300"
+            className="relative flex items-center gap-1 px-2 py-1 bg-blue-500/20 backdrop-blur-xl border border-blue-400/30 text-white text-xs font-medium hover:bg-white/20 transition-all duration-300"
           >
             <Globe size={14} />
             <span className="font-mono">{language.toUpperCase()}</span>
@@ -67,7 +67,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 hover:bg-white/10 rounded-lg transition-colors duration-200"
+            className="p-2 hover:bg-white/10 transition-colors duration-200"
           >
             <svg
               className="w-6 h-6 text-white"
@@ -75,56 +75,51 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={
-                  isMobileMenuOpen
-                    ? "M6 18L18 6M6 6l12 12"
-                    : "M4 6h16M4 12h16M4 18h16"
-                }
-              />
+              {isMobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
             </svg>
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      <div
-        className={`md:hidden bg-white/10 backdrop-blur-md border-t border-white/20 transition-all duration-300 ${
-          isMobileMenuOpen
-            ? "max-h-64 opacity-100"
-            : "max-h-0 opacity-0 overflow-hidden"
-        }`}
-      >
-        <div className="container mx-auto px-4 py-4 space-y-4">
-          <button
-            onClick={() => {
-              openAboutSidebar();
-              setIsMobileMenuOpen(false);
-            }}
-            className="block w-full text-left hover:text-blue-300 transition-colors cursor-pointer py-2"
-          >
-            Sobre mí
-          </button>
-
-          <a
-            href="#projects"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="block w-full text-left hover:text-blue-300 transition-colors py-2"
-          >
-            Proyectos
-          </a>
-          <a
-            href="#contact"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="block w-full text-left hover:text-blue-300 transition-colors py-2"
-          >
-            Contacto
-          </a>
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white/10 backdrop-blur-md border-t border-white/20">
+          <div className="px-4 py-4 space-y-4">
+            <button
+              onClick={openAboutSidebar}
+              className="block w-full text-left hover:text-blue-300 transition-colors cursor-pointer"
+            >
+              Sobre mí
+            </button>
+            <a
+              href="#projects"
+              className="block w-full text-left hover:text-blue-300 transition-colors"
+            >
+              Proyectos
+            </a>
+            <a
+              href="#contact"
+              className="block w-full text-left hover:text-blue-300 transition-colors"
+            >
+              Contacto
+            </a>
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };
