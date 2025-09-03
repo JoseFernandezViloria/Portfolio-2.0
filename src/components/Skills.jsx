@@ -11,7 +11,7 @@ const Skills = ({ skills }) => (
             className="bg-white/10 backdrop-blur-sm border border-red-400/30 p-3 flex flex-col items-center justify-center text-center hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg shadow-red-500/20 hover:shadow-red-500/40"
           >
             {/* Icono */}
-            <div className="text-2xl mb-2 text-red-400">{skill.icon}</div>
+            <div className="text-2xl mb-2 text-white">{skill.icon}</div>
 
             {/* Nombre de la habilidad */}
             <span className="text-xs font-medium text-white text-center leading-tight">
@@ -30,7 +30,7 @@ const Skills = ({ skills }) => (
               className="group relative bg-white/10 backdrop-blur-sm border border-red-400/30 px-4 py-3 hover:bg-white/20 transition-all duration-300 hover:scale-105 flex items-center gap-3 shadow-lg shadow-red-500/20 hover:shadow-red-500/40"
             >
               {/* Icono pequeño */}
-              <div className="text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300 text-red-400">
+              <div className="text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300 text-white">
                 {skill.icon}
               </div>
 

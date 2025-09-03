@@ -180,7 +180,7 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
                   className="bg-white/10 border border-red-400/30 px-6 py-4 flex items-center gap-3 w-16 h-16 lg:w-32 lg:h-16 justify-center shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all duration-300 hover:scale-105"
                 >
                   {/* Icono pequeño */}
-                  <div className="text-xl sm:text-2xl text-red-400">
+                  <div className="text-xl sm:text-2xl text-white">
                     <skill.icon />
                   </div>
 
