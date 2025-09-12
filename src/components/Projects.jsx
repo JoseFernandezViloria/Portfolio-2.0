@@ -76,7 +76,7 @@ const Projects = ({ projects, t }) => {
                 />
               ))}
             </div>
-          </div>
+          </aside>
 
           {/* Tarjeta principal del proyecto (lado derecho) */}
           <article className="lg:col-span-2" aria-label="Detalles del proyecto seleccionado">
