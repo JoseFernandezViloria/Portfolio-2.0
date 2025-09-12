@@ -8,21 +8,22 @@ const Projects = ({ projects, t }) => {
     <section
       id="projects"
       className="pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24"
+      aria-label="Sección de proyectos de José"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
+        <header className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <span className="text-green-400">{t.projectsTitle}</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             {t.projectsDescription}
           </p>
-        </div>
+        </header>
 
         {/* Layout interactivo: Lista lateral + Tarjeta principal (solo en desktop) */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Lista de proyectos (lado izquierdo) */}
-          <div className="lg:col-span-1">
+          <aside className="lg:col-span-1" aria-label="Lista de proyectos disponibles">
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-white mb-6">
                 Selecciona un proyecto
@@ -40,18 +41,18 @@ const Projects = ({ projects, t }) => {
           </div>
 
           {/* Tarjeta principal del proyecto (lado derecho) */}
-          <div className="lg:col-span-2">
+          <article className="lg:col-span-2" aria-label="Detalles del proyecto seleccionado">
             <ProjectCard
               project={projects[selectedProject]}
               t={t}
               isMainCard={true}
             />
-          </div>
+          </article>
         </div>
 
         {/* Layout original para móviles y tablets */}
         <div className="lg:hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8" role="list" aria-label="Lista de proyectos en vista móvil">
             {projects.map((project, index) => (
               <ProjectCard key={index} project={project} t={t} />
             ))}
@@ -67,11 +68,14 @@ const ProjectListItem = ({ project, isSelected, onClick, t }) => {
   return (
     <button
       onClick={onClick}
-      className={`w-full h-32 p-4 text-left transition-all duration-300 border flex flex-col ${
+      className={`w-full h-32 p-4 text-left transition-all duration-300 border flex flex-col focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
         isSelected
           ? "bg-gray-900 border-green-400/50 shadow-lg shadow-green-500/20"
           : "bg-gray-800 border-slate-600 hover:bg-gray-700 hover:border-slate-500"
       }`}
+      role="menuitem"
+      aria-pressed={isSelected}
+      aria-label={`Seleccionar proyecto: ${project.title}`}
     >
       {/* Mitad superior - Título con bullet point y badge */}
       <div className="flex-1 flex items-center justify-between">
@@ -125,10 +129,12 @@ const ProjectListItem = ({ project, isSelected, onClick, t }) => {
 // Componente para la tarjeta principal del proyecto
 const ProjectCard = ({ project, t, isMainCard = false }) => {
   return (
-    <div
+    <article
       className={`group bg-white/10 backdrop-blur-xl border border-green-400/30 transition-all duration-300 ${
         isMainCard ? "hover:scale-[1.02]" : "hover:scale-105"
-      } relative shadow-lg shadow-green-500/20 hover:shadow-xl hover:shadow-green-500/30 h-full flex flex-col`}
+      } relative shadow-lg shadow-green-500/20 hover:shadow-xl hover:shadow-green-500/30 h-full flex flex-col focus-within:outline-none focus-within:ring-2 focus-within:ring-green-400 focus-within:ring-offset-2 focus-within:ring-offset-transparent`}
+      role="article"
+      aria-label={`Proyecto: ${project.title}`}
     >
       <div
         className={`relative overflow-hidden ${
@@ -137,7 +143,7 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
       >
         <img
           src={project.image}
-          alt={project.title}
+          alt={`Captura de pantalla del proyecto ${project.title} - ${t[project.descriptionKey] || project.title}`}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
 
@@ -188,13 +194,18 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
         {/* Technologies con efectos */}
         <div
           className={`flex flex-wrap mb-6 ${isMainCard ? "gap-3" : "gap-2"}`}
+          role="list"
+          aria-label="Tecnologías utilizadas en el proyecto"
         >
           {project.technologies.map((tech, index) => (
             <span
               key={index}
-              className={`bg-white/10 backdrop-blur-xl text-white border border-green-400/30 hover:border-green-400/60 transition-all duration-300 group/tech ${
+              className={`bg-white/10 backdrop-blur-xl text-white border border-green-400/30 hover:border-green-400/60 transition-all duration-300 group/tech focus-within:outline-none focus-within:ring-2 focus-within:ring-green-400 focus-within:ring-offset-2 focus-within:ring-offset-transparent ${
                 isMainCard ? "px-3 py-2 text-sm" : "px-2 py-1 text-xs"
               }`}
+              role="listitem"
+              tabIndex="0"
+              aria-label={`Tecnología: ${tech}`}
             >
               <span className="relative z-10">{tech}</span>
               <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300"></div>
@@ -203,26 +214,29 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
         </div>
 
         {/* Links con efectos futuristas */}
-        <div className={`flex mt-auto ${isMainCard ? "gap-4" : "gap-3"}`}>
+        <div className={`flex mt-auto ${isMainCard ? "gap-4" : "gap-3"}`} role="group" aria-label="Enlaces del proyecto">
           <a
             href={project.github}
-            className={`relative flex items-center bg-white/10 backdrop-blur-xl border border-green-400/30 text-white font-medium hover:bg-white/20 transition-all duration-300 group/link overflow-hidden flex-1 justify-center ${
+            className={`relative flex items-center bg-white/10 backdrop-blur-xl border border-green-400/30 text-white font-medium hover:bg-white/20 transition-all duration-300 group/link overflow-hidden flex-1 justify-center focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
               isMainCard ? "gap-3 px-6 py-3" : "gap-2 px-3 py-2"
             }`}
+            aria-label={`Ver código fuente del proyecto ${project.title} en GitHub`}
           >
             <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-            <Github size={isMainCard ? 20 : 16} className="relative z-10" />
+            <Github size={isMainCard ? 20 : 16} className="relative z-10" aria-hidden="true" />
             <span className="relative z-10">{t.code}</span>
           </a>
           <a
             href={project.live}
-            className={`relative flex items-center bg-green-600 hover:bg-green-700 text-white font-medium hover:shadow-green-500/25 transition-all duration-300 group/link overflow-hidden flex-1 justify-center ${
+            className={`relative flex items-center bg-green-600 hover:bg-green-700 text-white font-medium hover:shadow-green-500/25 transition-all duration-300 group/link overflow-hidden flex-1 justify-center focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
               isMainCard ? "gap-3 px-6 py-3" : "gap-2 px-3 py-2"
             }`}
+            aria-label={`Ver demo en vivo del proyecto ${project.title}`}
           >
             <ExternalLink
               size={isMainCard ? 20 : 16}
               className="relative z-10"
+              aria-hidden="true"
             />
             <span className="relative z-10">{t.demo}</span>
           </a>
