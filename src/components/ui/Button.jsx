@@ -13,11 +13,12 @@ const Button = ({
 
   const variants = {
     primary:
-      "bg-blue-600 hover:bg-blue-700 text-white hover:shadow-blue-500/25",
+      "bg-green-600 hover:bg-green-700 text-white hover:shadow-green-500/25",
     secondary:
       "bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white/20",
-    yellow: "bg-red-600 hover:bg-red-700 text-white hover:shadow-red-500/25",
-    neon: "bg-blue-500 text-white hover:shadow-lg hover:shadow-blue-500/25",
+    yellow:
+      "bg-green-600 hover:bg-green-700 text-white hover:shadow-green-500/25",
+    neon: "bg-green-500 text-white hover:shadow-lg hover:shadow-green-500/25",
     glass:
       "bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white/20",
   };

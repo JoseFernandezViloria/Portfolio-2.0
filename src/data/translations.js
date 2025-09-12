@@ -39,6 +39,8 @@ export const translations = {
     copyright: "© 2024 Jose. Todos los derechos reservados.",
 
     // Project descriptions
+    autoGroupDesc:
+      "Aplicación web moderna para cotización y ventas de vehículos Subaru, Suzuki y Great Wall Motors. Incluye búsqueda inteligente, exploración por marcas y formulario de contacto.",
     ecommerceDesc:
       "Plataforma completa de comercio electrónico con carrito de compras, pagos y panel de administración.",
     taskAppDesc:
@@ -116,6 +118,8 @@ export const translations = {
     copyright: "© 2024 Jose. All rights reserved.",
 
     // Project descriptions
+    autoGroupDesc:
+      "Modern web application for vehicle quotation and sales of Subaru, Suzuki and Great Wall Motors. Includes intelligent search, brand exploration and contact form.",
     ecommerceDesc:
       "Complete e-commerce platform with shopping cart, payments and admin panel.",
     taskAppDesc:

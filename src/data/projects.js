@@ -1,13 +1,12 @@
 export const projects = [
   {
-    title: "E-commerce Platform",
-    descriptionKey: "ecommerceDesc",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-    technologies: ["React", "JavaScript", "Tailwind CSS"],
-    github: "https://github.com",
-    live: "https://demo.com",
-    featured: true,
+    title: "AutoGroup - Concesionario de Vehículos",
+    descriptionKey: "autoGroupDesc",
+    image: "/images/Atogroup.png",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "Vite"],
+    github: "https://github.com/JoseFernandezViloria/Auto",
+    live: "https://auto-wheat-rho.vercel.app/",
+    featured: false,
   },
   {
     title: "Task Management App",

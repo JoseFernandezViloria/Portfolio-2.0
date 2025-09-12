@@ -8,7 +8,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
       <nav className="container mx-auto flex justify-between items-center px-4 md:px-8 py-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-red-500 flex items-center justify-center shadow-lg">
+          <div className="w-10 h-10 bg-green-500 flex items-center justify-center shadow-lg">
             <Code size={20} className="text-white" />
           </div>
           <div className="text-xl font-bold tracking-widest text-white">
@@ -21,14 +21,14 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
           <div className="flex items-center gap-6">
             <button
               onClick={openAboutSidebar}
-              className="hover:text-blue-300 transition-colors cursor-pointer"
+              className="hover:text-green-300 transition-colors cursor-pointer"
             >
               Sobre mí
             </button>
 
             <a
               href="#projects"
-              className="hover:text-blue-300 transition-colors"
+              className="hover:text-green-300 transition-colors"
             >
               Proyectos
             </a>
@@ -37,7 +37,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
           {/* Language Switch */}
           <button
             onClick={toggleLanguage}
-            className="relative flex items-center gap-2 px-3 py-1 bg-blue-500/20 backdrop-blur-xl border border-blue-400/30 text-white text-sm font-medium hover:bg-white/20 transition-all duration-300 group"
+            className="relative flex items-center gap-2 px-3 py-1 bg-green-500/20 backdrop-blur-xl border border-green-400/30 text-white text-sm font-medium hover:bg-white/20 transition-all duration-300 group"
           >
             <Globe
               size={16}
@@ -48,7 +48,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
 
           <a
             href="#contact"
-            className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold shadow-lg hover:shadow-red-500/25 transition-all duration-300 ease-in-out"
+            className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg hover:shadow-green-500/25 transition-all duration-300 ease-in-out"
           >
             Contacto
           </a>
@@ -59,7 +59,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
           {/* Language Switch for Mobile */}
           <button
             onClick={toggleLanguage}
-            className="relative flex items-center gap-1 px-2 py-1 bg-blue-500/20 backdrop-blur-xl border border-blue-400/30 text-white text-xs font-medium hover:bg-white/20 transition-all duration-300"
+            className="relative flex items-center gap-1 px-2 py-1 bg-green-500/20 backdrop-blur-xl border border-green-400/30 text-white text-xs font-medium hover:bg-white/20 transition-all duration-300"
           >
             <Globe size={14} />
             <span className="font-mono">{language.toUpperCase()}</span>
@@ -101,19 +101,19 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
           <div className="px-4 py-4 space-y-4">
             <button
               onClick={openAboutSidebar}
-              className="block w-full text-left hover:text-blue-300 transition-colors cursor-pointer"
+              className="block w-full text-left hover:text-green-300 transition-colors cursor-pointer"
             >
               Sobre mí
             </button>
             <a
               href="#projects"
-              className="block w-full text-left hover:text-blue-300 transition-colors"
+              className="block w-full text-left hover:text-green-300 transition-colors"
             >
               Proyectos
             </a>
             <a
               href="#contact"
-              className="block w-full text-left hover:text-blue-300 transition-colors"
+              className="block w-full text-left hover:text-green-300 transition-colors"
             >
               Contacto
             </a>

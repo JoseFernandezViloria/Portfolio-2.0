@@ -21,21 +21,21 @@ const Footer = ({ t }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative p-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:text-red-300 hover:bg-white/20 transition-all duration-300"
+      className="group relative p-3 bg-slate-600/80 border border-slate-500/50 text-white hover:text-green-300 hover:bg-slate-500/80 transition-all duration-300"
     >
-      <div className="absolute inset-0 bg-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <Icon size={20} className="relative z-10" />
     </a>
   );
 
   return (
-    <footer id="contact" className="bg-slate-900 border-t border-slate-700">
+    <footer id="contact" className="solid-footer-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="text-center space-y-8">
           {/* Email input con funcionalidad de copiar */}
           <div className="max-w-md mx-auto">
             <h3 className="text-2xl sm:text-3xl font-bold mb-6">
-              <span className="text-red-400">
+              <span className="text-green-400">
                 ¿Tienes un proyecto en mente?
               </span>
             </h3>
@@ -49,12 +49,12 @@ const Footer = ({ t }) => {
                 type="email"
                 value={email}
                 readOnly
-                className="flex-1 bg-white text-gray-800 placeholder-gray-500 px-4 py-3 focus:outline-none text-sm sm:text-base border-2 border-transparent focus:border-red-400 transition-colors min-w-0"
+                className="flex-1 bg-white text-gray-800 placeholder-gray-500 px-4 py-3 focus:outline-none text-sm sm:text-base border-2 border-transparent focus:border-green-400 transition-colors min-w-0"
                 placeholder="Tu email aquí..."
               />
               <button
                 onClick={copyToClipboard}
-                className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold hover:shadow-red-500/25 transition-all duration-300 flex-shrink-0 w-32 self-center sm:self-auto"
+                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold hover:shadow-green-500/25 transition-all duration-300 flex-shrink-0 w-32 self-center sm:self-auto"
               >
                 {copied ? (
                   <div className="flex items-center justify-center gap-2">

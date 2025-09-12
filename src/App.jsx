@@ -24,7 +24,7 @@ function App() {
   const closeAboutSidebar = () => setIsAboutOpen(false);
 
   return (
-    <div className="bg-slate-900 text-white font-sans min-h-screen antialiased relative">
+    <div className="textured-gradient-bg text-white font-space-grotesk min-h-screen antialiased relative">
       <Suspense fallback={<div className="text-white">Cargando...</div>}>
         <Header
           openAboutSidebar={openAboutSidebar}
