@@ -108,7 +108,7 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
               >
                 {/* Foto centrada */}
                 <img
-                  src="./profile.png"
+                  src="/profile.png"
                   alt="Jose - Desarrollador React.js"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   style={{ objectPosition: "center 20%" }}

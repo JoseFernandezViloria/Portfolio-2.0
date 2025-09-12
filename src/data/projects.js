@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "AutoGroup - Concesionario de Vehículos",
     descriptionKey: "autoGroupDesc",
-    image: "./images/Atogroup.png",
+    image: "/images/Atogroup.png",
     technologies: ["React", "JavaScript", "Tailwind CSS", "Vite"],
     github: "https://github.com/JoseFernandezViloria/Auto",
     live: "https://auto-wheat-rho.vercel.app/",

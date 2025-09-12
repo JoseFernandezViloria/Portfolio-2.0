@@ -6,7 +6,7 @@ import { resolve } from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "./", // Usar rutas relativas en lugar de absolutas
+  base: "/", // Usar rutas absolutas para Vercel
   build: {
     outDir: "dist",
     assetsDir: "assets",
