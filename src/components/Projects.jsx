@@ -299,7 +299,7 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
           </a>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
