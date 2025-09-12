@@ -1,18 +1,29 @@
 import { useState } from "react";
 import { Code, Globe } from "lucide-react";
 
-const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
+const Header = ({ openAboutSidebar, toggleLanguage, language, t }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20" role="banner">
-      <nav className="container mx-auto flex justify-between items-center px-4 md:px-8 py-4" role="navigation" aria-label="Navegación principal">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20"
+      role="banner"
+    >
+      <nav
+        className="container mx-auto flex justify-between items-center px-4 md:px-8 py-4"
+        role="navigation"
+        aria-label="Navegación principal"
+      >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-green-500 flex items-center justify-center shadow-lg" role="img" aria-label="Logo de José - Desarrollador">
+          <div
+            className="w-10 h-10 bg-green-500 flex items-center justify-center shadow-lg"
+            role="img"
+            aria-label="Logo de José - Desarrollador"
+          >
             <Code size={20} className="text-white" aria-hidden="true" />
           </div>
           <div className="text-xl font-bold tracking-widest text-white">
-            JOSE.DEV
+            JOEFDZ.TECH
           </div>
         </div>
 
@@ -24,9 +35,13 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
                 onClick={openAboutSidebar}
                 className="hover:text-green-300 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
                 role="menuitem"
-                aria-label="Abrir información sobre José"
+                aria-label={
+                  language === "es"
+                    ? "Abrir información sobre José"
+                    : "Open information about José"
+                }
               >
-                Sobre mí
+                {t.about}
               </button>
             </li>
 
@@ -35,9 +50,13 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
                 href="#projects"
                 className="hover:text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
                 role="menuitem"
-                aria-label="Ir a la sección de proyectos"
+                aria-label={
+                  language === "es"
+                    ? "Ir a la sección de proyectos"
+                    : "Go to projects section"
+                }
               >
-                Proyectos
+                {t.projects}
               </a>
             </li>
           </ul>
@@ -46,7 +65,9 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
           <button
             onClick={toggleLanguage}
             className="relative flex items-center gap-2 px-3 py-1 bg-green-500/20 backdrop-blur-xl border border-green-400/30 text-white text-sm font-medium hover:bg-white/20 transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
-            aria-label={`Cambiar idioma. Idioma actual: ${language === 'es' ? 'Español' : 'English'}`}
+            aria-label={`Cambiar idioma. Idioma actual: ${
+              language === "es" ? "Español" : "English"
+            }`}
             aria-pressed={false}
           >
             <Globe
@@ -54,7 +75,9 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
               className="group-hover:rotate-180 transition-transform duration-300"
               aria-hidden="true"
             />
-            <span className="font-mono" aria-hidden="true">{language.toUpperCase()}</span>
+            <span className="font-mono" aria-hidden="true">
+              {language.toUpperCase()}
+            </span>
           </button>
 
           <a
@@ -72,16 +95,24 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
           <button
             onClick={toggleLanguage}
             className="relative flex items-center gap-1 px-2 py-1 bg-green-500/20 backdrop-blur-xl border border-green-400/30 text-white text-xs font-medium hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
-            aria-label={`Cambiar idioma. Idioma actual: ${language === 'es' ? 'Español' : 'English'}`}
+            aria-label={`Cambiar idioma. Idioma actual: ${
+              language === "es" ? "Español" : "English"
+            }`}
           >
             <Globe size={14} aria-hidden="true" />
-            <span className="font-mono" aria-hidden="true">{language.toUpperCase()}</span>
+            <span className="font-mono" aria-hidden="true">
+              {language.toUpperCase()}
+            </span>
           </button>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
-            aria-label={isMobileMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+            aria-label={
+              isMobileMenuOpen
+                ? "Cerrar menú de navegación"
+                : "Abrir menú de navegación"
+            }
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
@@ -114,7 +145,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div 
+        <div
           id="mobile-menu"
           className="md:hidden bg-white/10 backdrop-blur-md border-t border-white/20"
           role="menu"
@@ -125,25 +156,37 @@ const Header = ({ openAboutSidebar, toggleLanguage, language }) => {
               onClick={openAboutSidebar}
               className="block w-full text-left hover:text-green-300 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
               role="menuitem"
-              aria-label="Abrir información sobre José"
+              aria-label={
+                language === "es"
+                  ? "Abrir información sobre José"
+                  : "Open information about José"
+              }
             >
-              Sobre mí
+              {t.about}
             </button>
             <a
               href="#projects"
               className="block w-full text-left hover:text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
               role="menuitem"
-              aria-label="Ir a la sección de proyectos"
+              aria-label={
+                language === "es"
+                  ? "Ir a la sección de proyectos"
+                  : "Go to projects section"
+              }
             >
-              Proyectos
+              {t.projects}
             </a>
             <a
               href="#contact"
               className="block w-full text-left hover:text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
               role="menuitem"
-              aria-label="Ir a la sección de contacto"
+              aria-label={
+                language === "es"
+                  ? "Ir a la sección de contacto"
+                  : "Go to contact section"
+              }
             >
-              Contacto
+              {t.contact}
             </a>
           </div>
         </div>

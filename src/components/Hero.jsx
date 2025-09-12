@@ -71,32 +71,33 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
             </p>
 
             {/* Redes sociales */}
-            <nav className="flex items-center gap-4 justify-center lg:justify-start" aria-label="Enlaces a redes sociales">
+            <nav
+              className="flex items-center gap-6 justify-center lg:justify-start"
+              aria-label="Enlaces a redes sociales"
+            >
               <a
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:text-green-300 hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
+                className="text-white hover:text-green-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
                 aria-label="Visitar perfil de GitHub de José"
               >
-                <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <Github size={20} className="relative z-10" aria-hidden="true" />
+                <Github size={24} aria-hidden="true" />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:text-green-300 hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
+                className="text-white hover:text-green-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
                 aria-label="Visitar perfil de LinkedIn de José"
               >
-                <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <Linkedin size={20} className="relative z-10" aria-hidden="true" />
+                <Linkedin size={24} aria-hidden="true" />
               </a>
             </nav>
 
             {/* Botón de descargar CV */}
             <div className="flex justify-center lg:justify-start">
-              <button 
+              <button
                 className="group relative px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold hover:shadow-green-500/25 transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
                 aria-label="Descargar currículum vitae de José"
               >
@@ -106,7 +107,10 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
           </header>
 
           {/* Lado derecho - Foto circular con efectos dinámicos */}
-          <aside className="relative flex justify-center lg:justify-end" aria-label="Foto de perfil de José">
+          <aside
+            className="relative flex justify-center lg:justify-end"
+            aria-label="Foto de perfil de José"
+          >
             {/* Marco circular con efectos dinámicos */}
             <div className="relative group">
               {/* Contenedor de la foto clickeable */}
@@ -126,7 +130,12 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
                 {/* Overlay con texto indicativo */}
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="text-center text-white px-4">
-                    <div className="text-xl sm:text-2xl mb-2" aria-hidden="true">👋</div>
+                    <div
+                      className="text-xl sm:text-2xl mb-2"
+                      aria-hidden="true"
+                    >
+                      👋
+                    </div>
                     <div className="text-xs sm:text-sm font-medium">
                       Haz clic para saber más de mí
                     </div>
@@ -138,30 +147,27 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
         </div>
 
         {/* Skills integradas en el Hero */}
-        <section className="mt-16 sm:mt-20" aria-label="Habilidades técnicas de José">
-          <div className="bg-white/5 backdrop-blur-xl border border-green-400/20 p-6 sm:p-8 shadow-xl shadow-green-500/10">
-            <h3 className="sr-only">Habilidades técnicas</h3>
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8" role="list" aria-label="Lista de habilidades técnicas">
-              {skills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="bg-white/10 border border-green-400/30 px-6 py-4 flex items-center gap-3 w-16 h-16 lg:w-32 lg:h-16 justify-center shadow-lg shadow-green-500/20 hover:shadow-green-500/40 transition-all duration-300 hover:scale-105 focus-within:outline-none focus-within:ring-2 focus-within:ring-green-400 focus-within:ring-offset-2 focus-within:ring-offset-transparent rounded"
-                  role="listitem"
-                  tabIndex="0"
-                  aria-label={`Habilidad: ${skill.name}`}
-                >
-                  {/* Icono pequeño */}
-                  <div className="text-xl sm:text-2xl text-white" aria-hidden="true">
-                    <skill.icon />
-                  </div>
-
-                  {/* Nombre de la habilidad - solo visible en pantallas grandes */}
-                  <span className="hidden lg:block text-sm font-medium text-white">
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
-            </div>
+        <section
+          className="mt-16 sm:mt-20"
+          aria-label="Habilidades técnicas de José"
+        >
+          <div
+            className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8"
+            role="list"
+            aria-label="Lista de habilidades técnicas"
+          >
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className="text-4xl sm:text-5xl text-white hover:text-green-300 transition-colors duration-300"
+                role="listitem"
+                tabIndex="0"
+                aria-label={`Habilidad: ${skill.name}`}
+                title={skill.name}
+              >
+                <skill.icon />
+              </div>
+            ))}
           </div>
         </section>
       </div>

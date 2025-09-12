@@ -3,7 +3,7 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 
 const Footer = ({ t }) => {
   const [copied, setCopied] = useState(false);
-  const email = "jose@example.com";
+  const email = "contacto@joefdz.tech";
 
   const copyToClipboard = async () => {
     try {
@@ -21,10 +21,9 @@ const Footer = ({ t }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative p-3 bg-slate-600/80 border border-slate-500/50 text-white hover:text-green-300 hover:bg-slate-500/80 transition-all duration-300"
+      className="text-white hover:text-green-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
     >
-      <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <Icon size={20} className="relative z-10" />
+      <Icon size={24} />
     </a>
   );
 

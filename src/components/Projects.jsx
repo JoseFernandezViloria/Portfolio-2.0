@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
-import { 
-  SiReact, 
-  SiJavascript, 
-  SiTailwindcss, 
-  SiVite, 
-  SiTypescript, 
+import {
+  SiReact,
+  SiJavascript,
+  SiTailwindcss,
+  SiVite,
+  SiTypescript,
   SiNextdotjs,
   SiNodedotjs,
   SiMongodb,
@@ -14,28 +14,28 @@ import {
   SiGithub,
   SiFigma,
   SiAdobephotoshop,
-  SiAdobexd
+  SiAdobexd,
 } from "react-icons/si";
 
 // Función para obtener el icono de la tecnología
 const getTechIcon = (tech) => {
   const iconMap = {
-    'React': SiReact,
-    'JavaScript': SiJavascript,
-    'TypeScript': SiTypescript,
-    'Tailwind CSS': SiTailwindcss,
-    'Vite': SiVite,
-    'Next.js': SiNextdotjs,
-    'Node.js': SiNodedotjs,
-    'MongoDB': SiMongodb,
-    'PostgreSQL': SiPostgresql,
-    'Git': SiGit,
-    'GitHub': SiGithub,
-    'Figma': SiFigma,
-    'Photoshop': SiAdobephotoshop,
-    'Adobe XD': SiAdobexd,
+    React: SiReact,
+    JavaScript: SiJavascript,
+    TypeScript: SiTypescript,
+    "Tailwind CSS": SiTailwindcss,
+    Vite: SiVite,
+    "Next.js": SiNextdotjs,
+    "Node.js": SiNodedotjs,
+    MongoDB: SiMongodb,
+    PostgreSQL: SiPostgresql,
+    Git: SiGit,
+    GitHub: SiGithub,
+    Figma: SiFigma,
+    Photoshop: SiAdobephotoshop,
+    "Adobe XD": SiAdobexd,
   };
-  
+
   return iconMap[tech] || SiJavascript; // Fallback a JavaScript si no se encuentra
 };
 
@@ -61,7 +61,10 @@ const Projects = ({ projects, t }) => {
         {/* Layout interactivo: Lista lateral + Tarjeta principal (solo en desktop) */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Lista de proyectos (lado izquierdo) */}
-          <aside className="lg:col-span-1" aria-label="Lista de proyectos disponibles">
+          <aside
+            className="lg:col-span-1"
+            aria-label="Lista de proyectos disponibles"
+          >
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-white mb-6">
                 Selecciona un proyecto
@@ -79,7 +82,10 @@ const Projects = ({ projects, t }) => {
           </aside>
 
           {/* Tarjeta principal del proyecto (lado derecho) */}
-          <article className="lg:col-span-2" aria-label="Detalles del proyecto seleccionado">
+          <article
+            className="lg:col-span-2"
+            aria-label="Detalles del proyecto seleccionado"
+          >
             <ProjectCard
               project={projects[selectedProject]}
               t={t}
@@ -90,7 +96,11 @@ const Projects = ({ projects, t }) => {
 
         {/* Layout original para móviles y tablets */}
         <div className="lg:hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8" role="list" aria-label="Lista de proyectos en vista móvil">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
+            role="list"
+            aria-label="Lista de proyectos en vista móvil"
+          >
             {projects.map((project, index) => (
               <ProjectCard key={index} project={project} t={t} />
             ))}
@@ -145,28 +155,20 @@ const ProjectListItem = ({ project, isSelected, onClick, t }) => {
 
       {/* Mitad inferior - Tecnologías */}
       <div className="flex-1 flex items-end">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
           {project.technologies.map((tech, index) => {
             const IconComponent = getTechIcon(tech);
             return (
-              <div
+              <IconComponent
                 key={index}
-                className={`p-2 border transition-all duration-300 ${
-                  isSelected
-                    ? "bg-green-500/30 border-green-400/40 hover:bg-green-500/40"
-                    : "bg-slate-600 border-slate-500 hover:bg-slate-500"
-                }`}
+                size={20}
+                className={`${
+                  isSelected ? "text-green-400" : "text-gray-400"
+                } hover:text-green-300 transition-all duration-300 hover:scale-110`}
                 title={tech}
                 aria-label={`Tecnología: ${tech}`}
-              >
-                <IconComponent 
-                  size={16} 
-                  className={`${
-                    isSelected ? "text-green-200" : "text-gray-300"
-                  }`}
-                  aria-hidden="true"
-                />
-              </div>
+                aria-hidden="true"
+              />
             );
           })}
         </div>
@@ -187,12 +189,14 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
     >
       <div
         className={`relative overflow-hidden ${
-          isMainCard ? "h-56 lg:h-64" : "h-48"
+          isMainCard ? "h-64 lg:h-72" : "h-48"
         }`}
       >
         <img
           src={project.image}
-          alt={`Captura de pantalla del proyecto ${project.title} - ${t[project.descriptionKey] || project.title}`}
+          alt={`Captura de pantalla del proyecto ${project.title} - ${
+            t[project.descriptionKey] || project.title
+          }`}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
 
@@ -204,28 +208,16 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
             </span>
           </div>
         )}
-
-        {/* Overlay con información del proyecto */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="absolute bottom-4 left-4 right-4">
-            <h3 className="text-xl font-bold text-white mb-2">
-              {project.title}
-            </h3>
-            <p className="text-sm text-gray-200 line-clamp-2">
-              {t[project.descriptionKey]}
-            </p>
-          </div>
-        </div>
       </div>
 
       <div
         className={`flex flex-col flex-grow ${
-          isMainCard ? "p-4 lg:p-6" : "p-6"
+          isMainCard ? "p-6 lg:p-8" : "p-6"
         }`}
       >
         <h3
-          className={`font-bold mb-3 text-white group-hover:text-green-300 transition-colors relative ${
-            isMainCard ? "text-xl lg:text-2xl" : "text-xl"
+          className={`font-bold text-white group-hover:text-green-300 transition-colors relative ${
+            isMainCard ? "text-2xl lg:text-3xl mb-4" : "text-xl mb-2"
           }`}
         >
           {project.title}
@@ -233,8 +225,8 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
         </h3>
 
         <p
-          className={`text-gray-300 mb-4 leading-relaxed flex-grow ${
-            isMainCard ? "text-sm lg:text-base" : "text-sm"
+          className={`text-gray-300 leading-relaxed flex-grow ${
+            isMainCard ? "text-base lg:text-lg mb-4" : "text-sm mb-3"
           }`}
         >
           {t[project.descriptionKey]}
@@ -242,56 +234,57 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
 
         {/* Technologies con efectos */}
         <div
-          className={`flex flex-wrap mb-4 ${isMainCard ? "gap-2" : "gap-2"}`}
+          className={`flex flex-wrap ${
+            isMainCard ? "mb-4 gap-3" : "mb-3 gap-3"
+          }`}
           role="list"
           aria-label="Tecnologías utilizadas en el proyecto"
         >
           {project.technologies.map((tech, index) => {
             const IconComponent = getTechIcon(tech);
             return (
-              <div
+              <IconComponent
                 key={index}
-                className={`bg-white/10 backdrop-blur-xl border border-green-400/30 hover:border-green-400/60 transition-all duration-300 group/tech focus-within:outline-none focus-within:ring-2 focus-within:ring-green-400 focus-within:ring-offset-2 focus-within:ring-offset-transparent ${
-                  isMainCard ? "p-2" : "p-2"
-                }`}
-                role="listitem"
-                tabIndex="0"
-                aria-label={`Tecnología: ${tech}`}
+                size={isMainCard ? 28 : 20}
+                className="text-gray-400 hover:text-green-300 transition-all duration-300 hover:scale-110"
                 title={tech}
-              >
-                <IconComponent 
-                  size={isMainCard ? 20 : 20} 
-                  className="text-white group-hover/tech:text-green-300 transition-colors duration-300"
-                  aria-hidden="true"
-                />
-                <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300"></div>
-              </div>
+                aria-label={`Tecnología: ${tech}`}
+                aria-hidden="true"
+              />
             );
           })}
         </div>
 
         {/* Links con efectos futuristas */}
-        <div className={`flex mt-auto ${isMainCard ? "gap-3" : "gap-3"}`} role="group" aria-label="Enlaces del proyecto">
+        <div
+          className={`flex mt-auto ${isMainCard ? "gap-4" : "gap-3"}`}
+          role="group"
+          aria-label="Enlaces del proyecto"
+        >
           <a
             href={project.github}
             className={`relative flex items-center bg-white/10 backdrop-blur-xl border border-green-400/30 text-white font-medium hover:bg-white/20 transition-all duration-300 group/link overflow-hidden flex-1 justify-center focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
-              isMainCard ? "gap-2 px-4 py-2 text-sm" : "gap-2 px-3 py-2"
+              isMainCard ? "gap-2 px-4 py-3 text-sm" : "gap-2 px-3 py-2"
             }`}
             aria-label={`Ver código fuente del proyecto ${project.title} en GitHub`}
           >
             <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-            <Github size={isMainCard ? 18 : 16} className="relative z-10" aria-hidden="true" />
+            <Github
+              size={isMainCard ? 20 : 16}
+              className="relative z-10"
+              aria-hidden="true"
+            />
             <span className="relative z-10">{t.code}</span>
           </a>
           <a
             href={project.live}
             className={`relative flex items-center bg-green-600 hover:bg-green-700 text-white font-medium hover:shadow-green-500/25 transition-all duration-300 group/link overflow-hidden flex-1 justify-center focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
-              isMainCard ? "gap-2 px-4 py-2 text-sm" : "gap-2 px-3 py-2"
+              isMainCard ? "gap-2 px-4 py-3 text-sm" : "gap-2 px-3 py-2"
             }`}
             aria-label={`Ver demo en vivo del proyecto ${project.title}`}
           >
             <ExternalLink
-              size={isMainCard ? 18 : 16}
+              size={isMainCard ? 20 : 16}
               className="relative z-10"
               aria-hidden="true"
             />

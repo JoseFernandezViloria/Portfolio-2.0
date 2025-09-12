@@ -27,31 +27,32 @@ function App() {
     <div className="textured-gradient-bg text-white font-space-grotesk min-h-screen antialiased relative">
       {/* Enlaces de salto para accesibilidad */}
       <div className="sr-only focus-within:not-sr-only">
-        <a 
-          href="#hero" 
+        <a
+          href="#hero"
           className="absolute top-4 left-4 z-50 bg-green-600 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
         >
           Saltar al contenido principal
         </a>
-        <a 
-          href="#projects" 
+        <a
+          href="#projects"
           className="absolute top-16 left-4 z-50 bg-green-600 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
         >
           Saltar a proyectos
         </a>
-        <a 
-          href="#contact" 
+        <a
+          href="#contact"
           className="absolute top-28 left-4 z-50 bg-green-600 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
         >
           Saltar a contacto
         </a>
       </div>
-      
+
       <Suspense fallback={<div className="text-white">Cargando...</div>}>
         <Header
           openAboutSidebar={openAboutSidebar}
           toggleLanguage={toggleLanguage}
           language={language}
+          t={t}
         />
         <main className="relative z-10 py-2">
           <Hero

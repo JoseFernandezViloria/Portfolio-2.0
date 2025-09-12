@@ -1,10 +1,11 @@
 import {
   SiReact,
   SiJavascript,
-  SiTypescript,
   SiNextdotjs,
   SiTailwindcss,
-  SiVuedotjs,
+  SiVite,
+  SiNodedotjs,
+  SiAstro,
 } from "react-icons/si";
 
 export const skills = [
@@ -17,10 +18,6 @@ export const skills = [
     icon: SiJavascript,
   },
   {
-    name: "TypeScript",
-    icon: SiTypescript,
-  },
-  {
     name: "Next.js",
     icon: SiNextdotjs,
   },
@@ -29,7 +26,15 @@ export const skills = [
     icon: SiTailwindcss,
   },
   {
-    name: "Vue.js",
-    icon: SiVuedotjs,
+    name: "Vite",
+    icon: SiVite,
+  },
+  {
+    name: "Node.js",
+    icon: SiNodedotjs,
+  },
+  {
+    name: "Astro",
+    icon: SiAstro,
   },
 ];
