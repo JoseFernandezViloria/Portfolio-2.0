@@ -1,5 +1,6 @@
 import React from "react";
 import { Github, Linkedin } from "lucide-react";
+import { ProfileImg } from "../assets/images";
 
 const Hero = ({ openAboutSidebar, t, language, skills }) => {
   return (
@@ -108,7 +109,7 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
               >
                 {/* Foto centrada */}
                 <img
-                  src="/profile.png"
+                  src={ProfileImg}
                   alt="Jose - Desarrollador React.js"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   style={{ objectPosition: "center 20%" }}
