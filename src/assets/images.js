@@ -1,5 +1,6 @@
 // Importar imágenes como módulos para Vercel
-import AtogroupImg from './images/Atogroup.png';
-import ProfileImg from '../assets/profile.png';
+import AtogroupImg from "./images/Atogroup.png";
+import ProfileImg from "../assets/profile.png";
+import RecetAppImg from "./images/Recet-app.png";
 
-export { AtogroupImg, ProfileImg };
+export { AtogroupImg, ProfileImg, RecetAppImg };

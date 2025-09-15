@@ -1,4 +1,4 @@
-import { AtogroupImg } from "../assets/images";
+import { AtogroupImg, RecetAppImg } from "../assets/images";
 
 export const projects = [
   {
@@ -11,43 +11,21 @@ export const projects = [
     featured: false,
   },
   {
-    title: "Task Management App",
-    descriptionKey: "taskAppDesc",
-    image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com",
-    live: "https://demo.com",
+    title: "Cocina Enraizada - Sitio Gastronómico",
+    descriptionKey: "cocinaEnraizadaDesc",
+    image: "/images/Cocina Enraizada.png",
+    technologies: ["Astro", "JavaScript", "Tailwind CSS", "Vite"],
+    github: "https://github.com/JoseFernandezViloria/cocina-enraizada-astro",
+    live: "https://cocina-enraizada-astro.vercel.app/",
+    featured: false,
+  },
+  {
+    title: "RecetApp - Aplicación de Recetas",
+    descriptionKey: "recetAppDesc",
+    image: RecetAppImg,
+    technologies: ["React", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/JoseFernandezViloria/recipes-app",
+    live: "https://recipes-app-vtm1-5pa2uvlla-jose-fernandezs-projects-704c21d1.vercel.app/",
     featured: true,
-  },
-  {
-    title: "Weather Dashboard",
-    descriptionKey: "weatherDesc",
-    image:
-      "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
-    technologies: ["React", "JavaScript", "Tailwind CSS"],
-    github: "https://github.com",
-    live: "https://demo.com",
-    featured: false,
-  },
-  {
-    title: "Social Network Clone",
-    descriptionKey: "socialDesc",
-    image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
-    technologies: ["React", "TypeScript", "Next.js"],
-    github: "https://github.com",
-    live: "https://demo.com",
-    featured: false,
-  },
-  {
-    title: "Portfolio Website",
-    descriptionKey: "portfolioDesc",
-    image:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
-    technologies: ["React", "JavaScript", "Tailwind CSS"],
-    github: "https://github.com",
-    live: "https://demo.com",
-    featured: false,
   },
 ];

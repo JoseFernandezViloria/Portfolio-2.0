@@ -2,7 +2,7 @@
 
 Un portfolio moderno y elegante construido con React.js, Tailwind CSS y Vite.
 
-## 🚀 Características
+## Características
 
 - **Diseño Moderno**: Glassmorphism, gradientes y efectos visuales elegantes
 - **Responsive**: Optimizado para móvil, tablet y desktop
@@ -12,7 +12,7 @@ Un portfolio moderno y elegante construido con React.js, Tailwind CSS y Vite.
 - **Carrusel de Proyectos**: Navegación elegante entre proyectos
 - **Funcionalidad de Copiar**: Botón para copiar email al portapapeles
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 src/
@@ -36,7 +36,7 @@ src/
 └── main.jsx            # Punto de entrada
 ```
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **React.js**: Framework principal
 - **Tailwind CSS**: Framework de estilos
@@ -44,7 +44,7 @@ src/
 - **Lucide React**: Iconos
 - **React Icons**: Iconos de tecnologías
 
-## 🎨 Componentes Principales
+## Componentes Principales
 
 ### Header
 
@@ -86,7 +86,7 @@ src/
 - Educación
 - Especialidades
 
-## 🌐 Internacionalización
+## Internacionalización
 
 El proyecto incluye soporte completo para español e inglés:
 
@@ -94,14 +94,14 @@ El proyecto incluye soporte completo para español e inglés:
 - **Hook personalizado**: `useLanguage` para manejo de estado
 - **Cambio dinámico**: Botón en el header para cambiar idioma
 
-## 📱 Responsive Design
+## Responsive Design
 
 - **Mobile First**: Diseño optimizado para móviles
 - **Breakpoints**: sm, md, lg, xl
 - **Navegación adaptativa**: Menú hamburguesa en móvil
 - **Grid responsivo**: Se adapta a diferentes tamaños
 
-## 🎯 Funcionalidades Especiales
+## Funcionalidades Especiales
 
 ### Modal About
 
@@ -123,7 +123,7 @@ El proyecto incluye soporte completo para español e inglés:
 - Efectos hover elaborados
 - Partículas animadas
 
-## 🚀 Instalación y Uso
+## Instalación y Uso
 
 1. **Clonar el repositorio**
 
@@ -149,7 +149,7 @@ El proyecto incluye soporte completo para español e inglés:
    pnpm build
    ```
 
-## 📝 Personalización
+## Personalización
 
 ### Cambiar Contenido
 
@@ -169,21 +169,21 @@ El proyecto incluye soporte completo para español e inglés:
 - **Hooks personalizados**: Agregar en `src/hooks/`
 - **Utilidades**: Implementar en `src/utils/`
 
-## 🎨 Paleta de Colores
+## Paleta de Colores
 
 - **Primarios**: Púrpura (#8b5cf6) y Rosa (#ec4899)
 - **Secundarios**: Cian (#06b6d4) y Azul (#3b82f6)
 - **Neutros**: Slate (#0f172a) y Blanco
 - **Gradientes**: Combinaciones de colores primarios
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT.
 
-## 👨‍💻 Autor
+## Autor
 
 **Jose** - Desarrollador Frontend
 
 ---
 
-¡Gracias por revisar mi portfolio! 🚀
+¡Gracias por revisar mi portfolio!

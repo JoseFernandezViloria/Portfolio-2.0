@@ -41,12 +41,14 @@ export const translations = {
     // Project descriptions
     autoGroupDesc:
       "Aplicación web moderna para cotización y ventas de vehículos Subaru, Suzuki y Great Wall Motors. Incluye búsqueda inteligente, exploración por marcas y formulario de contacto.",
+    cocinaEnraizadaDesc:
+      "Sitio web profesional para Cocina Enraizada, especialistas en cocina tradicional colombiana gourmet. Desarrollado con Astro, incluye secciones de servicios, galería de imágenes y diseño responsivo.",
+    recetAppDesc:
+      "Aplicación full-stack para buscar y gestionar recetas favoritas. Desarrollada con React, Node.js, Express y MongoDB. Incluye búsqueda por ingredientes usando TheMealDB API y sistema de favoritos.",
     ecommerceDesc:
       "Plataforma completa de comercio electrónico con carrito de compras, pagos y panel de administración.",
     taskAppDesc:
       "Aplicación de gestión de tareas con drag & drop, categorías y recordatorios.",
-    weatherDesc:
-      "Dashboard meteorológico con mapas interactivos y pronósticos detallados.",
     socialDesc:
       "Clon de red social con feed, perfiles de usuario y sistema de likes.",
     portfolioDesc:
@@ -120,12 +122,14 @@ export const translations = {
     // Project descriptions
     autoGroupDesc:
       "Modern web application for vehicle quotation and sales of Subaru, Suzuki and Great Wall Motors. Includes intelligent search, brand exploration and contact form.",
+    cocinaEnraizadaDesc:
+      "Professional website for Cocina Enraizada, specialists in traditional Colombian gourmet cuisine. Built with Astro, includes services sections, image gallery and responsive design.",
+    recetAppDesc:
+      "Full-stack application for searching and managing favorite recipes. Built with React, Node.js, Express and MongoDB. Includes ingredient search using TheMealDB API and favorites system.",
     ecommerceDesc:
       "Complete e-commerce platform with shopping cart, payments and admin panel.",
     taskAppDesc:
       "Task management application with drag & drop, categories and reminders.",
-    weatherDesc:
-      "Weather dashboard with interactive maps and detailed forecasts.",
     socialDesc:
       "Social network clone with feed, user profiles and like system.",
     portfolioDesc:

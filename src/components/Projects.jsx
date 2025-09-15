@@ -15,6 +15,7 @@ import {
   SiFigma,
   SiAdobephotoshop,
   SiAdobexd,
+  SiAstro,
 } from "react-icons/si";
 
 // Función para obtener el icono de la tecnología
@@ -25,6 +26,7 @@ const getTechIcon = (tech) => {
     TypeScript: SiTypescript,
     "Tailwind CSS": SiTailwindcss,
     Vite: SiVite,
+    Astro: SiAstro,
     "Next.js": SiNextdotjs,
     "Node.js": SiNodedotjs,
     MongoDB: SiMongodb,
