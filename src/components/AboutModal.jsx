@@ -160,7 +160,7 @@ const AboutModal = ({ isOpen, onClose, t }) => {
         }`}
       >
         <div
-          className={`relative bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-2xl border border-green-400/30 shadow-2xl shadow-green-500/20 max-w-4xl w-full max-h-[95vh] overflow-hidden transition-all duration-500 ${
+          className={`relative bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-2xl border border-green-400/30 shadow-2xl shadow-green-500/20 max-w-4xl w-full max-h-[95vh] flex flex-col transition-all duration-500 ${
             isOpen ? "scale-100 rotate-0" : "scale-95 rotate-1"
           }`}
           onClick={(e) => e.stopPropagation()}
@@ -200,40 +200,42 @@ const AboutModal = ({ isOpen, onClose, t }) => {
             </div>
           </div>
 
-          {/* Contenido del modal */}
-          <div className="p-8">
-            {/* Tarjeta actual con diseño mejorado */}
-            <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-700/50 backdrop-blur-sm border border-green-400/20 p-8 min-h-[400px] shadow-xl">
-              {/* Efectos de fondo */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-400/5 to-transparent rounded-full blur-2xl"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-emerald-400/5 to-transparent rounded-full blur-xl"></div>
+          {/* Contenido del modal con scroll */}
+          <div className="flex-1 overflow-y-auto">
+            <div className="p-4 sm:p-8">
+              {/* Tarjeta actual con diseño mejorado */}
+              <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-700/50 backdrop-blur-sm border border-green-400/20 p-4 sm:p-8 min-h-[300px] sm:min-h-[400px] shadow-xl">
+                {/* Efectos de fondo */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-400/5 to-transparent rounded-full blur-2xl"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-emerald-400/5 to-transparent rounded-full blur-xl"></div>
 
-              <div className="relative z-10">{cards[currentCard].content}</div>
-            </div>
+                <div className="relative z-10">{cards[currentCard].content}</div>
+              </div>
 
-            {/* Navegación mejorada */}
-            <div className="flex items-center justify-center mt-8">
-              {/* Indicadores mejorados */}
-              <div className="flex gap-3">
-                {cards.map((card, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentCard(index)}
-                    className={`group flex items-center gap-2 px-4 py-2 transition-all duration-300 ${
-                      index === currentCard
-                        ? "bg-gradient-to-r from-green-400 to-emerald-400 text-white shadow-lg scale-105"
-                        : "bg-slate-700/50 text-gray-400 hover:bg-slate-600/50 hover:text-white"
-                    }`}
-                  >
-                    {React.createElement(card.icon, {
-                      size: 16,
-                      className: `transition-all duration-300 ${
-                        index === currentCard ? "text-white" : "text-current"
-                      }`,
-                    })}
-                    <span className="text-sm font-medium">{card.title}</span>
-                  </button>
-                ))}
+              {/* Navegación mejorada */}
+              <div className="flex items-center justify-center mt-6 sm:mt-8">
+                {/* Indicadores mejorados */}
+                <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
+                  {cards.map((card, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentCard(index)}
+                      className={`group flex items-center gap-2 px-3 sm:px-4 py-2 transition-all duration-300 ${
+                        index === currentCard
+                          ? "bg-gradient-to-r from-green-400 to-emerald-400 text-white shadow-lg scale-105"
+                          : "bg-slate-700/50 text-gray-400 hover:bg-slate-600/50 hover:text-white"
+                      }`}
+                    >
+                      {React.createElement(card.icon, {
+                        size: 16,
+                        className: `transition-all duration-300 ${
+                          index === currentCard ? "text-white" : "text-current"
+                        }`,
+                      })}
+                      <span className="text-xs sm:text-sm font-medium">{card.title}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
