@@ -97,7 +97,7 @@ const Footer = ({ t }) => {
           {/* Redes sociales */}
           <div className="flex justify-center items-center gap-4">
             <SocialIcon Icon={Github} href="https://github.com" />
-            <SocialIcon Icon={Linkedin} href="https://www.linkedin.com/notifications/?filter=all" />
+            <SocialIcon Icon={Linkedin} href="https://www.linkedin.com/in/jos%C3%A9-eduardo-fern%C3%A1ndez-viloria-1a4630295/" />
           </div>
 
           {/* Copyright */}
