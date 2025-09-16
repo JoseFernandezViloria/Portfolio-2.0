@@ -1,4 +1,4 @@
-import { AtogroupImg, RecetAppImg } from "../assets/images";
+import { AtogroupImg, RecetAppImg, CocinaEnraizadaImg } from "../assets/images";
 
 export const projects = [
   {
@@ -13,7 +13,7 @@ export const projects = [
   {
     title: "Cocina Enraizada - Sitio Gastronómico",
     descriptionKey: "cocinaEnraizadaDesc",
-    image: "/images/Cocina Enraizada.png",
+    image: CocinaEnraizadaImg,
     technologies: ["Astro", "JavaScript", "Tailwind CSS", "Vite"],
     github: "https://github.com/JoseFernandezViloria/cocina-enraizada-astro",
     live: "https://cocina-enraizada-astro.vercel.app/",
