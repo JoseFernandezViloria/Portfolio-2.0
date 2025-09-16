@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 const Footer = ({ t }) => {
   const [copied, setCopied] = useState(false);
@@ -97,8 +97,7 @@ const Footer = ({ t }) => {
           {/* Redes sociales */}
           <div className="flex justify-center items-center gap-4">
             <SocialIcon Icon={Github} href="https://github.com" />
-            <SocialIcon Icon={Linkedin} href="https://linkedin.com" />
-            <SocialIcon Icon={Twitter} href="https://twitter.com" />
+            <SocialIcon Icon={Linkedin} href="https://www.linkedin.com/notifications/?filter=all" />
           </div>
 
           {/* Copyright */}
