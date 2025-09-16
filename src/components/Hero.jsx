@@ -76,7 +76,7 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
               aria-label="Enlaces a redes sociales"
             >
               <a
-                href="https://github.com"
+                href="https://github.com/JoseFernandezViloria"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-green-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
@@ -85,7 +85,7 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
                 <Github size={24} aria-hidden="true" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/jos%C3%A9-eduardo-fern%C3%A1ndez-viloria-1a4630295/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-green-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
