@@ -95,15 +95,6 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
               </a>
             </nav>
 
-            {/* Botón de descargar CV */}
-            <div className="flex justify-center lg:justify-start">
-              <button
-                className="group relative px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold hover:shadow-green-500/25 transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
-                aria-label="Descargar currículum vitae de José"
-              >
-                <span className="relative z-10">{t.downloadCV}</span>
-              </button>
-            </div>
           </header>
 
           {/* Lado derecho - Foto circular con efectos dinámicos */}
