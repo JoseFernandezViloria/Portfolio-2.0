@@ -100,10 +100,6 @@ const Footer = ({ t }) => {
             <SocialIcon Icon={Linkedin} href="https://www.linkedin.com/in/jos%C3%A9-eduardo-fern%C3%A1ndez-viloria-1a4630295/" />
           </div>
 
-          {/* Copyright */}
-          <div className="text-gray-400 text-sm">
-            <p>&copy; 2024 Jose. Todos los derechos reservados.</p>
-          </div>
         </div>
       </div>
     </footer>
