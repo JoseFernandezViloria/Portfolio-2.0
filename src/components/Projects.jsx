@@ -166,7 +166,7 @@ const ProjectListItem = ({ project, isSelected, onClick, t }) => {
                 size={20}
                 className={`${
                   isSelected ? "text-green-400" : "text-gray-400"
-                } hover:text-green-300 transition-all duration-150 hover:scale-110`}
+                } hover:text-green-300 transition-colors duration-150`}
                 title={tech}
                 aria-label={`Tecnología: ${tech}`}
                 aria-hidden="true"
@@ -248,7 +248,7 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
               <IconComponent
                 key={index}
                 size={isMainCard ? 28 : 20}
-                className="text-gray-400 hover:text-green-300 transition-all duration-150 hover:scale-110"
+                className="text-gray-400 hover:text-green-300 transition-colors duration-150"
                 title={tech}
                 aria-label={`Tecnología: ${tech}`}
                 aria-hidden="true"
