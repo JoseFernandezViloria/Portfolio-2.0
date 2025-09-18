@@ -96,16 +96,17 @@
 
   .project-link {
     color: var(--color-purple-500);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.15s ease-out;
     font-weight: 500;
+    will-change: transform, color;
   }
 
   .project-link:hover {
     color: var(--color-pink-500);
-    transform: translateY(-1px);
+    transform: translate3d(0, -1px, 0);
   }
 
-  /* Fondo texturizado con degradado negro y verde */
+  /* Fondo texturizado con degradado negro y verde - Optimizado para scroll */
   .textured-gradient-bg {
     background: radial-gradient(
         circle at 20% 80%,
@@ -131,7 +132,7 @@
         #2a2a2a 100%
       );
     background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-    background-attachment: fixed;
+    background-attachment: scroll; /* Optimizado para mejor rendimiento de scroll */
   }
 
   /* Textura sutil */
@@ -213,19 +214,20 @@
     transform: translateZ(20px);
   }
 
-  /* Animaciones personalizadas */
+  /* Animaciones personalizadas - Optimizadas para rendimiento */
   @keyframes float {
     0%,
     100% {
-      transform: translateY(0px) rotate(0deg);
+      transform: translate3d(0, 0, 0) rotate(0deg);
     }
     50% {
-      transform: translateY(-10px) rotate(180deg);
+      transform: translate3d(0, -10px, 0) rotate(180deg);
     }
   }
 
   .animate-float {
     animation: float 3s ease-in-out infinite;
+    will-change: transform;
   }
 
   @keyframes glow {
@@ -241,5 +243,6 @@
 
   .animate-glow {
     animation: glow 2s ease-in-out infinite;
+    will-change: box-shadow;
   }
 }

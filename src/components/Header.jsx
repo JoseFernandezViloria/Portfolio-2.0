@@ -6,7 +6,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language, t }) => {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-sm border-b border-white/20"
       role="banner"
     >
       <nav
@@ -33,7 +33,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language, t }) => {
             <li role="none">
               <button
                 onClick={openAboutSidebar}
-                className="hover:text-green-300 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
+                className="hover:text-green-300 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
                 role="menuitem"
                 aria-label={
                   language === "es"
@@ -48,7 +48,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language, t }) => {
             <li role="none">
               <a
                 href="#projects"
-                className="hover:text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
+                className="hover:text-green-300 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
                 role="menuitem"
                 aria-label={
                   language === "es"
@@ -64,7 +64,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language, t }) => {
           {/* Language Switch */}
           <button
             onClick={toggleLanguage}
-            className="relative flex items-center gap-2 px-3 py-1 bg-green-500/20 backdrop-blur-xl border border-green-400/30 text-white text-sm font-medium hover:bg-white/20 transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
+            className="relative flex items-center gap-2 px-3 py-1 bg-green-500/20 backdrop-blur-sm border border-green-400/30 text-white text-sm font-medium hover:bg-white/20 transition-all duration-150 group focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
             aria-label={`Cambiar idioma. Idioma actual: ${
               language === "es" ? "Español" : "English"
             }`}
@@ -72,7 +72,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language, t }) => {
           >
             <Globe
               size={16}
-              className="group-hover:rotate-180 transition-transform duration-300"
+              className="group-hover:rotate-180 transition-transform duration-150"
               aria-hidden="true"
             />
             <span className="font-mono" aria-hidden="true">
@@ -82,7 +82,7 @@ const Header = ({ openAboutSidebar, toggleLanguage, language, t }) => {
 
           <a
             href="#contact"
-            className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg hover:shadow-green-500/25 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
+            className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg hover:shadow-green-500/25 transition-all duration-150 ease-out focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
             aria-label="Ir a la sección de contacto"
           >
             Contacto

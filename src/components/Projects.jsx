@@ -118,7 +118,7 @@ const ProjectListItem = ({ project, isSelected, onClick, t }) => {
   return (
     <button
       onClick={onClick}
-      className={`w-full h-32 p-4 text-left transition-all duration-300 border flex flex-col focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
+      className={`w-full h-32 p-4 text-left transition-all duration-150 border flex flex-col focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
         isSelected
           ? "bg-gray-900 border-green-400/50 shadow-lg shadow-green-500/20"
           : "bg-gray-800 border-slate-600 hover:bg-gray-700 hover:border-slate-500"
@@ -166,7 +166,7 @@ const ProjectListItem = ({ project, isSelected, onClick, t }) => {
                 size={20}
                 className={`${
                   isSelected ? "text-green-400" : "text-gray-400"
-                } hover:text-green-300 transition-all duration-300 hover:scale-110`}
+                } hover:text-green-300 transition-all duration-150 hover:scale-110`}
                 title={tech}
                 aria-label={`Tecnología: ${tech}`}
                 aria-hidden="true"
@@ -183,7 +183,7 @@ const ProjectListItem = ({ project, isSelected, onClick, t }) => {
 const ProjectCard = ({ project, t, isMainCard = false }) => {
   return (
     <article
-      className={`group bg-white/10 backdrop-blur-xl border border-green-400/30 transition-all duration-300 ${
+      className={`group bg-white/10 backdrop-blur-sm border border-green-400/30 transition-all duration-150 ${
         isMainCard ? "hover:scale-[1.02]" : "hover:scale-105"
       } relative shadow-lg shadow-green-500/20 hover:shadow-xl hover:shadow-green-500/30 h-full flex flex-col focus-within:outline-none focus-within:ring-2 focus-within:ring-green-400 focus-within:ring-offset-2 focus-within:ring-offset-transparent`}
       role="article"
@@ -199,13 +199,13 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
           alt={`Captura de pantalla del proyecto ${project.title} - ${
             t[project.descriptionKey] || project.title
           }`}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-200"
         />
 
         {/* Badge destacado si es featured */}
         {project.featured && (
           <div className="absolute top-4 right-4">
-            <span className="px-3 py-1 bg-green-500/90 backdrop-blur-xl text-white text-sm font-bold border border-green-400/30 shadow-lg shadow-green-500/25">
+            <span className="px-3 py-1 bg-green-500/90 backdrop-blur-sm text-white text-sm font-bold border border-green-400/30 shadow-lg shadow-green-500/25">
               {t.featured}
             </span>
           </div>
@@ -218,12 +218,12 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
         }`}
       >
         <h3
-          className={`font-bold text-white group-hover:text-green-300 transition-colors relative ${
+          className={`font-bold text-white group-hover:text-green-300 transition-colors duration-150 relative ${
             isMainCard ? "text-2xl lg:text-3xl mb-4" : "text-xl mb-2"
           }`}
         >
           {project.title}
-          <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"></div>
+          <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-150"></div>
         </h3>
 
         <p
@@ -248,7 +248,7 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
               <IconComponent
                 key={index}
                 size={isMainCard ? 28 : 20}
-                className="text-gray-400 hover:text-green-300 transition-all duration-300 hover:scale-110"
+                className="text-gray-400 hover:text-green-300 transition-all duration-150 hover:scale-110"
                 title={tech}
                 aria-label={`Tecnología: ${tech}`}
                 aria-hidden="true"
@@ -265,12 +265,12 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
         >
           <a
             href={project.github}
-            className={`relative flex items-center bg-white/10 backdrop-blur-xl border border-green-400/30 text-white font-medium hover:bg-white/20 transition-all duration-300 group/link overflow-hidden flex-1 justify-center focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
+            className={`relative flex items-center bg-white/10 backdrop-blur-sm border border-green-400/30 text-white font-medium hover:bg-white/20 transition-all duration-150 group/link overflow-hidden flex-1 justify-center focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
               isMainCard ? "gap-2 px-4 py-3 text-sm" : "gap-2 px-3 py-2"
             }`}
             aria-label={`Ver código fuente del proyecto ${project.title} en GitHub`}
           >
-            <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"></div>
             <Github
               size={isMainCard ? 20 : 16}
               className="relative z-10"
@@ -280,7 +280,7 @@ const ProjectCard = ({ project, t, isMainCard = false }) => {
           </a>
           <a
             href={project.live}
-            className={`relative flex items-center bg-green-600 hover:bg-green-700 text-white font-medium hover:shadow-green-500/25 transition-all duration-300 group/link overflow-hidden flex-1 justify-center focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
+            className={`relative flex items-center bg-green-600 hover:bg-green-700 text-white font-medium hover:shadow-green-500/25 transition-all duration-150 group/link overflow-hidden flex-1 justify-center focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent ${
               isMainCard ? "gap-2 px-4 py-3 text-sm" : "gap-2 px-3 py-2"
             }`}
             aria-label={`Ver demo en vivo del proyecto ${project.title}`}

@@ -21,7 +21,7 @@ const Footer = ({ t }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-white hover:text-green-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
+      className="text-white hover:text-green-300 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
     >
       <Icon size={24} />
     </a>
@@ -53,7 +53,7 @@ const Footer = ({ t }) => {
               />
               <button
                 onClick={copyToClipboard}
-                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold hover:shadow-green-500/25 transition-all duration-300 flex-shrink-0 w-32 self-center sm:self-auto"
+                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold hover:shadow-green-500/25 transition-all duration-150 flex-shrink-0 w-32 self-center sm:self-auto"
               >
                 {copied ? (
                   <div className="flex items-center justify-center gap-2">

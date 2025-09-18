@@ -140,7 +140,7 @@ const AboutModal = ({ isOpen, onClose, t }) => {
     <>
       {/* Overlay de fondo difuminado con efecto de partículas */}
       <div
-        className={`fixed inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 backdrop-blur-md z-40 transition-all duration-500 ${
+        className={`fixed inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 backdrop-blur-sm z-40 transition-all duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={onClose}
@@ -155,12 +155,12 @@ const AboutModal = ({ isOpen, onClose, t }) => {
 
       {/* Modal */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-500 ${
+        className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
         <div
-          className={`relative bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-2xl border border-green-400/30 shadow-2xl shadow-green-500/20 max-w-4xl w-full max-h-[95vh] flex flex-col transition-all duration-500 ${
+          className={`relative bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-sm border border-green-400/30 shadow-2xl shadow-green-500/20 max-w-4xl w-full max-h-[95vh] flex flex-col transition-all duration-300 ${
             isOpen ? "scale-100 rotate-0" : "scale-95 rotate-1"
           }`}
           onClick={(e) => e.stopPropagation()}
@@ -190,11 +190,11 @@ const AboutModal = ({ isOpen, onClose, t }) => {
               </div>
               <button
                 onClick={onClose}
-                className="p-3 hover:bg-white/10 transition-all duration-300 text-white hover:text-green-300 group"
+                className="p-3 hover:bg-white/10 transition-all duration-150 text-white hover:text-green-300 group"
               >
                 <X
                   size={24}
-                  className="group-hover:rotate-90 transition-transform duration-300"
+                  className="group-hover:rotate-90 transition-transform duration-150"
                 />
               </button>
             </div>
@@ -220,7 +220,7 @@ const AboutModal = ({ isOpen, onClose, t }) => {
                     <button
                       key={index}
                       onClick={() => setCurrentCard(index)}
-                      className={`group flex items-center gap-2 px-3 sm:px-4 py-2 transition-all duration-300 ${
+                      className={`group flex items-center gap-2 px-3 sm:px-4 py-2 transition-all duration-150 ${
                         index === currentCard
                           ? "bg-gradient-to-r from-green-400 to-emerald-400 text-white shadow-lg scale-105"
                           : "bg-slate-700/50 text-gray-400 hover:bg-slate-600/50 hover:text-white"
@@ -228,7 +228,7 @@ const AboutModal = ({ isOpen, onClose, t }) => {
                     >
                       {React.createElement(card.icon, {
                         size: 16,
-                        className: `transition-all duration-300 ${
+                        className: `transition-all duration-150 ${
                           index === currentCard ? "text-white" : "text-current"
                         }`,
                       })}

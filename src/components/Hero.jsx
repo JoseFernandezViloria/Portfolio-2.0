@@ -79,7 +79,7 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
                 href="https://github.com/JoseFernandezViloria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-green-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                className="text-white hover:text-green-300 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
                 aria-label="Visitar perfil de GitHub de José"
               >
                 <Github size={24} aria-hidden="true" />
@@ -88,7 +88,7 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
                 href="https://www.linkedin.com/in/jos%C3%A9-eduardo-fern%C3%A1ndez-viloria-1a4630295/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-green-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                className="text-white hover:text-green-300 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
                 aria-label="Visitar perfil de LinkedIn de José"
               >
                 <Linkedin size={24} aria-hidden="true" />
@@ -107,19 +107,19 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
               {/* Contenedor de la foto clickeable */}
               <button
                 onClick={openAboutSidebar}
-                className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-white/10 backdrop-blur-xl border-4 border-white/20 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-white/10 backdrop-blur-sm border-4 border-white/20 shadow-2xl hover:scale-105 transition-all duration-150 cursor-pointer group flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent"
                 aria-label="Hacer clic para ver más información sobre José"
               >
                 {/* Foto centrada */}
                 <img
                   src={ProfileImg}
                   alt="José Fernández, desarrollador de React.js especializado en crear experiencias web modernas e interactivas"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-200"
                   style={{ objectPosition: "center 20%" }}
                 />
 
                 {/* Overlay con texto indicativo */}
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-150 flex items-center justify-center">
                   <div className="text-center text-white px-4">
                     <div
                       className="text-xl sm:text-2xl mb-2"
@@ -150,7 +150,7 @@ const Hero = ({ openAboutSidebar, t, language, skills }) => {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="text-4xl sm:text-5xl text-white hover:text-green-300 transition-colors duration-300"
+                className="text-4xl sm:text-5xl text-white hover:text-green-300 transition-colors duration-150"
                 role="listitem"
                 tabIndex="0"
                 aria-label={`Habilidad: ${skill.name}`}
